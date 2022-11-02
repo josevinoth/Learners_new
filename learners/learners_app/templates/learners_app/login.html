@@ -1,0 +1,46 @@
+{% extends "learners_app/header_3.html" %}
+{% load widget_tweaks %}
+{% block content %}
+
+<!--<form method="POST" action="">
+	{% csrf_token %}
+	{{form.as_p}}
+
+</form>-->
+<div class="row">
+	<div class="col-4"></div>
+	<div class="col-4">
+		<div class="container-fluid">
+			<div class="card text-white bg-warning mb-3" style="max-width: 100%;">
+				<div class="card-header text-center"><h4>Sign In</h4></div>
+				<div class="card-body bg-light text-dark" >
+					<form method="POST">
+						{% csrf_token %}
+						<input type="text" class="form-control m-2 p-2" placeholder="User Name" name="username" required="True">
+						<input type="password" class="form-control m-2 p-2" placeholder="Password" name="password"  required="True">
+
+						<div class="text-center">
+							<button class="btn btn-outline-success" type="submit"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Login</button>
+						</div>
+					</form>
+					<br>
+					<div class="message text-center">
+						{% for message in messages %}
+						<a {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</a>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="card-footer text-center bg-light">
+					<div class="justify-content-center text-dark">
+						Don't have an account?<a href="{% url 'registration_page' %}"> Sign Up</a>
+					</div>
+					<div class="justify-content-center">
+						<a href="">Forgot your password?</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-4"></div>
+</div>
+{% endblock content %}

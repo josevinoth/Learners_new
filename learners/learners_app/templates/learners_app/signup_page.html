@@ -1,0 +1,67 @@
+{% extends "learners_app/header_3.html" %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="container-fluid">
+  <form method="POST" action="">
+    {% csrf_token %}
+    <div class="row text-center">
+      <h1 class="text-warning" style="font-family:Tahoma ; font-size:90px;"><b>OUR MISSION</b></h1>
+      <h3 style="font-family:Georgia ; font-size:30px;">is to help medium-large organizations become purspose-driven companies with purpose-driven employees</h3>
+    </div>
+    <br>
+    <div class="row container-fluid">
+      <div class="col-1"></div>
+      <div class="col-5 text-center">
+         <img src="/media/img_77.png"  class="img-thumbnail">
+        <h1>Let's talk how you can help
+          employees learn and grow
+          with purpose</h1>
+      </div>
+      <div class="col-3">
+        <div class="input-group input-group-lg mb-3">
+          {% render_field form.username class="form-control" type="text"  placeholder="User Name" %}
+        </div>
+        <div class="input-group input-group-lg mb-3">
+          {% render_field form.first_name class="form-control" type="text"  placeholder="First Name" %}
+        </div>
+        <div class="input-group input-group-lg mb-3">
+          {% render_field form.last_name class="form-control" type="text"  placeholder="Last Name" %}
+        </div>
+        <div class="input-group input-group-lg mb-3">
+          {% render_field form.email class="form-control" type="text"  placeholder="Work email" %}
+        </div>
+        <div class="input-group input-group-lg mb-3">
+          {% render_field user_ext_form.emp_country class="form-control" type="text"  placeholder="Country" %}
+        </div>
+        <div class="input-group input-group-lg mb-3">
+          {% render_field form.password1 class="form-control" type="password"  placeholder="Password" %}
+        </div>
+        <div class="input-group input-group-lg mb-3">
+          {% render_field form.password2 class="form-control" type="password"  placeholder="Confirm Password" %}
+        </div>
+        <button type="submit" class="btn btn-lg btn-success "><i class="fas fa-check"></i> Register</button>
+<!--        <a href="{% url 'first_page' %}" class="btn btn-lg btn-danger float-right">-->
+<!--          <i class="fa fa-arrow-left" aria-hidden="true"></i> Back   </a>-->
+      </div>
+      <div class="col-3">
+        <div class="input-group input-group-lg mb-3">
+          {% render_field user_ext_form.emp_contact class="form-control" type="text"  placeholder="Phone Number" %}
+        </div>
+        <div class="input-group input-group-lg mb-3">
+          {% render_field user_ext_form.emp_job_title class="form-control" type="text"  placeholder="Job Title" %}
+        </div>
+        <div class="input-group input-group-lg mb-3">
+          {% render_field user_ext_form.emp_interest class="form-control" type="text"  placeholder="Choose Your Interest" %}
+        </div>
+        <div class="input-group input-group-lg mb-3">
+          {% render_field user_ext_form.emp_no_of_employees class="form-control" type="text"  placeholder="Number Of Employees" %}
+        </div>
+        <div class="input-group input-group-lg mb-3">
+          {% render_field user_ext_form.emp_free_text class="form-control" type="text"  placeholder="How are you looking to use Entreprelearners?" %}
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock content %}
+</html>
